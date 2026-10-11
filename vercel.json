@@ -1,4 +1,15 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/service-:id", "destination": "/service-:id.html" },
+    { "source": "/case-:id", "destination": "/case-:id.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/en/service-:id", "destination": "/en/service-:id.html" },
+    { "source": "/en/case-:id", "destination": "/en/case-:id.html" },
+    { "source": "/en/privacy", "destination": "/en/privacy.html" },
+    { "source": "/en/terms", "destination": "/en/terms.html" },
+    { "source": "/en", "destination": "/en/index.html" }
+  ]
 }
