@@ -1230,15 +1230,23 @@
 
     function handleCalcSubmit(e) {
       e.preventDefault();
+      const contactVal = document.getElementById('calcContact').value || '+380987194210';
+      const nameVal = document.getElementById('calcName').value || 'Customer';
       document.getElementById('calcSuccessMsg').classList.remove('hidden');
-      setTimeout(() => {
-        alert('Estimate submitted! Our team will contact you on ' + document.getElementById('calcContact').value);
-      }, 500);
+      const alertMsg = 'Estimate submitted! Our team will contact you on ' + contactVal;
+      showToast('Estimate Submitted! 🚀', 'Thank you, ' + nameVal + '! Our team will contact you on ' + contactVal + ' within 30 minutes.');
+      try {
+        window.alert(alertMsg);
+      } catch (err) {}
     }
 
     function handleContactSubmit(e) {
       e.preventDefault();
       document.getElementById('contactSuccessMsg').classList.remove('hidden');
+      showToast('Message Received! ⚡', 'Thank you! A Buildora engineer has received your request and will follow up shortly.');
+      try {
+        window.alert('Message received! Our team will contact you shortly.');
+      } catch (err) {}
     }
   </script>
 
@@ -1326,6 +1334,56 @@ function openServiceModal(id) {
 
 function closeServiceModal() {
   document.getElementById('serviceDetailModal').classList.add('hidden');
+}
+</script>
+
+
+<!-- PREMIUM NOTIFICATION TOAST -->
+<div id="appToast" class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none max-w-md w-full px-4">
+  <div class="bg-gray-900/95 border border-cyan-500/40 rounded-2xl p-4 shadow-2xl backdrop-blur-xl flex items-start gap-3 pointer-events-auto">
+    <div id="toastIcon" class="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 text-lg flex-shrink-0">
+      ✓
+    </div>
+    <div class="flex-1 pt-0.5">
+      <div id="toastTitle" class="text-sm font-bold text-white font-display">Success</div>
+      <div id="toastMsg" class="text-xs text-gray-300 mt-0.5 leading-relaxed">Notification details</div>
+    </div>
+    <button onclick="hideToast()" class="text-gray-400 hover:text-white text-lg font-bold p-1 leading-none">&times;</button>
+  </div>
+</div>
+
+<script>
+let toastTimer = null;
+function showToast(title, message, isSuccess = true) {
+  const toast = document.getElementById('appToast');
+  if (!toast) {
+    alert(title + '
+' + message);
+    return;
+  }
+  document.getElementById('toastTitle').textContent = title;
+  document.getElementById('toastMsg').textContent = message;
+  const icon = document.getElementById('toastIcon');
+  if (isSuccess) {
+    icon.className = 'w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 text-lg flex-shrink-0';
+    icon.innerHTML = '✓';
+  } else {
+    icon.className = 'w-10 h-10 rounded-xl bg-violet-500/20 border border-violet-500/40 flex items-center justify-center text-violet-400 text-lg flex-shrink-0';
+    icon.innerHTML = 'ℹ';
+  }
+  toast.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
+  toast.classList.add('translate-y-0', 'opacity-100');
+  if (toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    hideToast();
+  }, 6000);
+}
+function hideToast() {
+  const toast = document.getElementById('appToast');
+  if (toast) {
+    toast.classList.remove('translate-y-0', 'opacity-100');
+    toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+  }
 }
 </script>
 
