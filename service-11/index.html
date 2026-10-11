@@ -1,202 +1,255 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
-<script>if(localStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light';</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Бот-вікторина (Квіз) — Детальна інформація</title>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0a0f1c;--panel:#111a2e;--line:#22304d;--text:#e8edf7;--mut:#8d9bb8;--acc:#3dffa2;--acc2:#4d8bff;--r:14px}
-[data-theme=light]{--bg:#ffffff;--panel:#f8fafc;--line:#e2e8f0;--text:#0f172a;--mut:#475569;--acc:#059669;--acc2:#2563eb}
-*{box-sizing:border-box;margin:0}
-body{background:var(--bg);color:var(--text);font:400 16px/1.6 Onest,sans-serif;padding:0;margin:0;}
-header{padding:20px;border-bottom:1px solid var(--line);display:flex;align-items:center;background:var(--panel);position:sticky;top:0;z-index:100;}
-.logo{font:700 20px Unbounded,sans-serif;color:var(--text);text-decoration:none;}
-.logo i{color:var(--acc);font-style:normal}
-section{padding:60px 20px;border-bottom:1px solid var(--line);}
-.container{max-width:900px;margin:0 auto;}
-h1,h2,h3{font-family:Unbounded,sans-serif;color:var(--text);margin-bottom:20px;}
-h1{font-size:36px;color:var(--acc);}
-h2{font-size:28px;text-align:center;}
-.desc{font-size:18px;color:var(--mut);margin-bottom:30px;}
-.price-box{display:flex;align-items:center;justify-content:space-between;padding:30px;background:linear-gradient(90deg,var(--panel),rgba(61,255,162,0.1));border-radius:12px;border:1px solid var(--acc);flex-wrap:wrap;gap:20px;}
-.price{font-family:Unbounded,sans-serif;font-size:32px;}
-.btn{background:var(--text);color:var(--bg);padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;display:inline-block;cursor:pointer;border:none;}
-.btn:hover{filter:brightness(1.1);}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px;}
-.card{background:var(--panel);padding:25px;border-radius:12px;border:1px solid var(--line);}
-.card h3{font-size:18px;color:var(--acc2);margin-bottom:10px;}
-ul.check-list{list-style:none;padding:0;}
-ul.check-list li{padding:12px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:15px;}
-ul.check-list li:before{content:'✓';color:var(--acc);font-weight:bold;font-size:20px;}
-ul.check-list li:last-child{border-bottom:none;}
-.step{display:flex;gap:20px;margin-bottom:20px;}
-.step-num{background:var(--line);color:var(--acc);font-family:Unbounded,sans-serif;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;font-size:20px;flex-shrink:0;}
-.faq-item{background:var(--panel);margin-bottom:15px;padding:20px;border-radius:12px;border:1px solid var(--line);}
-.faq-item h4{font-size:18px;margin-bottom:10px;color:var(--acc2);}
-.faq-item p{color:var(--mut);font-size:15px;}
-footer{padding:30px 20px;text-align:center;color:var(--mut);font-size:14px;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lead Quiz / Gamification Bot — Buildora Turnkey Solutions</title>
+  <meta name="description" content="Interactive quiz funnels that segment prospects and capture hot leads. Professional delivery by Buildora.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#0B0F19',
+              card: '#111827',
+              surface: '#151D30',
+              violet: '#8B5CF6',
+              cyan: '#06B6D4',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #0B0F19;
+      color: #F3F4F6;
+      font-family: 'Inter', sans-serif;
+    }
+    .bg-mesh {
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(6, 182, 212, 0.12) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+  </style>
 </head>
-<body>
-<!-- Block 1: Header -->
-<header>
-  <a href="/" class="logo">Buildora<i>.</i></a>
-  <div style="margin-left:auto;display:flex;align-items:center;">
-    <a href="/service-11" style="margin-right:15px;color:var(--text);font-weight:bold;text-decoration:none;">UK</a>
-    <a href="/en/service-11" style="margin-right:20px;color:var(--mut);font-weight:normal;text-decoration:none;">EN</a>
-    <button id="theme" style="margin-right:15px;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:4px 10px;cursor:pointer;font-size:16px;" aria-label="Toggle theme">◐</button>
-    <a href="/" style="color:var(--mut);text-decoration:none;">← Назад на головну</a>
-  </div>
-</header>
+<body class="bg-[#0B0F19] text-gray-100 antialiased bg-mesh min-h-screen flex flex-col">
 
-<!-- Block 2: Hero -->
-<section style="padding-top:80px;padding-bottom:80px;">
-  <div class="container">
-    <h1>Бот-вікторина (Квіз)</h1>
-    <p class="desc">Генерація лідів через гейміфікацію.</p>
-    <div class="price-box">
-      <div>
-        <div style="color:var(--mut);font-size:14px;">Орієнтовна вартість:</div>
-        <div class="price">4 500 ₴</div>
-      </div>
-      <a href="#order" class="btn">Замовити зараз</a>
-    </div>
-  </div>
-</section>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#0B0F19]/80 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-violet-600 flex items-center justify-center font-bold text-lg text-white shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform duration-300">
+          ⚡
+        </div>
+        <span class="font-display font-bold text-2xl tracking-tight text-white">Buildora<span class="text-cyan-400">.</span></span>
+      </a>
 
-<!-- Block 3: Features -->
-<section>
-  <div class="container">
-    <h2>Що входить у вартість:</h2>
-    <div class="card" style="margin-top:30px;">
-      <ul class="check-list">
-        <li>Індивідуальний дизайн та розробка</li><li>Підтримка 24/7 протягом року</li><li>Базове SEO та оптимізація швидкості</li><li>Гарантія якості та безперебійної роботи</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- Block 4: Target Audience -->
-<section style="background:var(--panel);">
-  <div class="container">
-    <h2>Для кого підійде ця послуга?</h2>
-    <div class="grid">
-      <div class="card" style="background:var(--bg);">
-        <h3>Малому бізнесу</h3>
-        <p style="color:var(--mut);">Для тих, хто хоче швидко запуститися і почати отримувати клієнтів.</p>
-      </div>
-      <div class="card" style="background:var(--bg);">
-        <h3>Підприємцям</h3>
-        <p style="color:var(--mut);">Для автоматизації рутини та збільшення продажів.</p>
-      </div>
-      <div class="card" style="background:var(--bg);">
-        <h3>Компаніям</h3>
-        <p style="color:var(--mut);">Для масштабування та виходу на новий рівень.</p>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="/#services-all" class="text-gray-400 hover:text-white transition-colors">← All Services</a>
+        <a href="#order" class="hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white font-semibold text-sm shadow-md transition-all">
+          Order This Solution
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- Block 5: Workflow -->
-<section>
-  <div class="container">
-    <h2>Як ми працюємо</h2>
-    <div style="margin-top:40px;max-width:600px;margin-inline:auto;">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div>
-          <h3 style="margin-bottom:5px;">Заявка</h3>
-          <p style="color:var(--mut);">Ви залишаєте заявку, ми зв'язуємося з вами для обговорення деталей.</p>
+  <!-- Main Content -->
+  <main class="flex-grow py-12 md:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      <!-- Hero Detail Block -->
+      <div class="space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          Telegram Bot • Delivery: 3 Days
+        </div>
+
+        <h1 class="font-display font-bold text-4xl sm:text-5xl text-white tracking-tight leading-[1.15]">
+          Lead Quiz / Gamification Bot
+        </h1>
+
+        <p class="text-gray-300 text-lg sm:text-xl leading-relaxed">
+          Interactive quiz funnels that segment prospects and capture hot leads
+        </p>
+
+        <!-- Pricing Card -->
+        <div class="bg-gray-900/80 border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-xl flex flex-col sm:flex-row justify-between sm:items-center gap-6 shadow-2xl">
+          <div>
+            <div class="text-xs uppercase font-semibold text-gray-400">Fixed / Turnkey Investment:</div>
+            <div class="font-display font-bold text-4xl text-cyan-400 mt-1">4,500 ₴</div>
+            <div class="text-xs text-gray-400 mt-1">✓ 50% Upfront, 50% Upon Complete Acceptance</div>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="#order" class="px-8 py-4 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 transition-all text-center">
+              Order This Service &rarr;
+            </a>
+            <a href="https://t.me/buildora_support" target="_blank" class="px-6 py-4 rounded-xl border border-white/10 hover:border-cyan-500/40 bg-white/5 text-gray-200 font-semibold text-sm transition-all text-center">
+              Ask in Telegram
+            </a>
+          </div>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div>
-          <h3 style="margin-bottom:5px;">Бриф</h3>
-          <p style="color:var(--mut);">Фіксуємо вимоги, ціну та терміни в договорі.</p>
+
+      <!-- Overview -->
+      <div class="bg-gray-900/40 border border-white/10 rounded-2xl p-8 space-y-4">
+        <h2 class="font-display font-bold text-2xl text-white">Solution Overview</h2>
+        <p class="text-gray-300 text-base leading-relaxed">
+          Engage cold traffic with an interactive questionnaire, compute tailored scores, and deliver customized bonus PDFs while passing data to CRM.
+        </p>
+      </div>
+
+      <!-- Scope of Work (What's included) -->
+      <div class="space-y-6">
+        <h2 class="font-display font-bold text-2xl text-white">Detailed Scope of Work & Deliverables</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <div class="bg-gray-900/60 border border-white/10 rounded-xl p-5 flex items-start gap-4">
+            <div class="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+            <div class="text-sm text-gray-300 leading-relaxed">Branching quiz logic adapting questions based on prior answers</div>
+          </div>
+          
+          <div class="bg-gray-900/60 border border-white/10 rounded-xl p-5 flex items-start gap-4">
+            <div class="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+            <div class="text-sm text-gray-300 leading-relaxed">Automated lead qualification score calculated dynamically</div>
+          </div>
+          
+          <div class="bg-gray-900/60 border border-white/10 rounded-xl p-5 flex items-start gap-4">
+            <div class="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+            <div class="text-sm text-gray-300 leading-relaxed">Instant delivery of lead-magnet files, promo codes, or video bonuses</div>
+          </div>
+          
+          <div class="bg-gray-900/60 border border-white/10 rounded-xl p-5 flex items-start gap-4">
+            <div class="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+            <div class="text-sm text-gray-300 leading-relaxed">Verified phone and email capture before reveal of final result</div>
+          </div>
+          
+          <div class="bg-gray-900/60 border border-white/10 rounded-xl p-5 flex items-start gap-4">
+            <div class="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+            <div class="text-sm text-gray-300 leading-relaxed">Instant notification to sales reps containing full answers questionnaire</div>
+          </div>
+          
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div>
-          <h3 style="margin-bottom:5px;">Розробка</h3>
-          <p style="color:var(--mut);">Ми створюємо продукт, налаштовуємо та тестуємо його.</p>
+
+      <!-- Target Audience -->
+      <div class="space-y-6">
+        <h2 class="font-display font-bold text-2xl text-white">Ideal For</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          
+          <div class="bg-gray-900/40 border border-white/10 rounded-xl p-6 text-center space-y-2">
+            <div class="text-2xl mb-1">🎯</div>
+            <div class="font-semibold text-white text-sm">Mortgage and financial advisors</div>
+          </div>
+          
+          <div class="bg-gray-900/40 border border-white/10 rounded-xl p-6 text-center space-y-2">
+            <div class="text-2xl mb-1">🎯</div>
+            <div class="font-semibold text-white text-sm">Interior designers and construction companies</div>
+          </div>
+          
+          <div class="bg-gray-900/40 border border-white/10 rounded-xl p-6 text-center space-y-2">
+            <div class="text-2xl mb-1">🎯</div>
+            <div class="font-semibold text-white text-sm">Online academies and fitness coaches</div>
+          </div>
+          
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <div>
-          <h3 style="margin-bottom:5px;">Запуск</h3>
-          <p style="color:var(--mut);">Ви отримуєте готовий результат та інструкції з використання.</p>
+
+      <!-- Delivery Process Workflow -->
+      <div class="space-y-6">
+        <h2 class="font-display font-bold text-2xl text-white">4-Stage Production Roadmap</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+          <div class="bg-gray-900/40 border border-white/10 rounded-xl p-5 space-y-2">
+            <span class="text-xs font-mono text-cyan-400 font-bold">STAGE 01</span>
+            <div class="font-bold text-white text-base">Brief & Specs</div>
+            <p class="text-xs text-gray-400">Discussion, requirements gathering, and contract finalization.</p>
+          </div>
+          <div class="bg-gray-900/40 border border-white/10 rounded-xl p-5 space-y-2">
+            <span class="text-xs font-mono text-cyan-400 font-bold">STAGE 02</span>
+            <div class="font-bold text-white text-base">Design & Logic</div>
+            <p class="text-xs text-gray-400">Architecture draft, conversational flow, and UI prototype.</p>
+          </div>
+          <div class="bg-gray-900/40 border border-white/10 rounded-xl p-5 space-y-2">
+            <span class="text-xs font-mono text-cyan-400 font-bold">STAGE 03</span>
+            <div class="font-bold text-white text-base">Engineering</div>
+            <p class="text-xs text-gray-400">Clean code implementation, API connections, and QA testing.</p>
+          </div>
+          <div class="bg-gray-900/40 border border-white/10 rounded-xl p-5 space-y-2">
+            <span class="text-xs font-mono text-cyan-400 font-bold">STAGE 04</span>
+            <div class="font-bold text-white text-base">Launch & Handover</div>
+            <p class="text-xs text-gray-400">Production deployment, staff instructions, and 30d warranty SLA.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- Block 6: Why Us -->
-<section style="background:var(--panel);">
-  <div class="container">
-    <h2>Чому варто обрати нас</h2>
-    <div class="grid">
-      <div class="card" style="background:var(--bg);">
-        <h3>Фіксована ціна</h3>
-        <p style="color:var(--mut);">Жодних прихованих платежів. Ціна не змінюється в процесі.</p>
+      <!-- Direct Order Form -->
+      <div id="order" class="bg-gray-900/90 border border-cyan-500/30 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-xl space-y-8">
+        <div class="text-center max-w-xl mx-auto space-y-2">
+          <h2 class="font-display font-bold text-3xl text-white">Order Lead Quiz / Gamification Bot</h2>
+          <p class="text-gray-400 text-sm">
+            Leave your contact details. A Buildora technical specialist will review your request and contact you within 30 minutes.
+          </p>
+        </div>
+
+        <form onsubmit="handleOrderSubmit(event)" class="max-w-xl mx-auto space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Your Name</label>
+            <input type="text" required placeholder="Alexander" class="w-full bg-[#0B0F19] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Telegram Username or Phone</label>
+            <input type="text" required placeholder="@username or +1 (555) 000-0000" class="w-full bg-[#0B0F19] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Project Notes / Requirements</label>
+            <textarea rows="3" placeholder="Tell us about your business or specific features you need..." class="w-full bg-[#0B0F19] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400"></textarea>
+          </div>
+          <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 transition-all">
+            Submit Order for Lead Quiz / Gamification Bot (4,500 ₴) &rarr;
+          </button>
+          <div id="orderSuccess" class="hidden text-center text-sm font-semibold text-emerald-400 pt-2">
+            ✓ Request submitted! A Buildora engineer will reach out in under 30 minutes.
+          </div>
+        </form>
       </div>
-      <div class="card" style="background:var(--bg);">
-        <h3>Швидкий запуск</h3>
-        <p style="color:var(--mut);">Ми використовуємо готові модулі, щоб запустити проєкт за лічені дні.</p>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-10 bg-[#0B0F19] text-gray-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-2 font-display text-white font-bold">
+        <span class="text-cyan-400">⚡</span> Buildora Technologies
       </div>
-      <div class="card" style="background:var(--bg);">
-        <h3>Підтримка 24/7</h3>
-        <p style="color:var(--mut);">Ми завжди на зв'язку і готові допомогти після запуску.</p>
+      <div>© 2026 Buildora. All rights reserved.</div>
+      <div class="flex gap-6">
+        <a href="/privacy" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="/terms" class="hover:text-white transition-colors">Terms of Service</a>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- Block 7: FAQ -->
-<section>
-  <div class="container">
-    <h2>Поширені запитання</h2>
-    <div style="margin-top:30px;">
-      <div class="faq-item">
-        <h4>Чи можна змінити дизайн пізніше?</h4>
-        <p>Так, проєкт легко масштабується та змінюється за потреби.</p>
-      </div>
-      <div class="faq-item">
-        <h4>Як відбувається оплата?</h4>
-        <p>Оплата ділиться на дві частини: 50% перед початком, 50% після здачі.</p>
-      </div>
-      <div class="faq-item">
-        <h4>Чи потрібні мені технічні знання?</h4>
-        <p>Ні, ми беремо всю технічну частину на себе і даємо зручну адмінку.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Block 8: CTA / Contact -->
-<section id="order" style="background:linear-gradient(180deg, var(--bg), var(--panel));text-align:center;">
-  <div class="container">
-    <h2 style="color:var(--acc);">Готові почати?</h2>
-    <p class="desc">Залиште заявку, і ми безкоштовно проконсультуємо вас щодо проєкту.</p>
-    <a href="/#contact" class="btn" style="font-size:20px;padding:15px 40px;">Замовити зараз</a>
-  </div>
-</section>
-
-<!-- Block 9: Footer -->
-<footer>
-  <div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center;">
-    <div>© 2026 Buildora. Усі права захищено.</div>
-    <div style="display:flex;gap:20px;font-size:13px;">
-      <a href="/privacy" style="color:var(--text);text-decoration:underline;">Політика конфіденційності</a>
-      <a href="/terms" style="color:var(--text);text-decoration:underline;">Умови використання</a>
-    </div>
-  </div>
-</footer>
-<script>document.getElementById('theme').onclick=()=>{const r=document.documentElement;const isL=r.dataset.theme==='light';r.dataset.theme=isL?'dark':'light';localStorage.setItem('theme',isL?'dark':'light');};</script>
+  <script>
+    function handleOrderSubmit(e) {
+      e.preventDefault();
+      document.getElementById('orderSuccess').classList.remove('hidden');
+    }
+  </script>
 </body>
 </html>
