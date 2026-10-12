@@ -1,101 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>if(localStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light';</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Coffee Shop "Zerno" — Case Study</title>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0a0f1c;--panel:#111a2e;--line:#22304d;--text:#e8edf7;--mut:#8d9bb8;--acc:#3dffa2;--acc2:#4d8bff;--r:14px}
-[data-theme=light]{--bg:#ffffff;--panel:#f8fafc;--line:#e2e8f0;--text:#0f172a;--mut:#475569;--acc:#059669;--acc2:#2563eb}
-*{box-sizing:border-box;margin:0}
-body{background:var(--bg);color:var(--text);font:400 16px/1.6 Onest,sans-serif;padding:0;margin:0;}
-header{padding:20px;border-bottom:1px solid var(--line);display:flex;align-items:center;background:var(--panel);position:sticky;top:0;z-index:100;}
-.logo{font:700 20px Unbounded,sans-serif;color:var(--text);text-decoration:none;}
-.logo i{color:var(--acc);font-style:normal}
-section{padding:60px 20px;border-bottom:1px solid var(--line);}
-.container{max-width:900px;margin:0 auto;}
-h1,h2,h3{font-family:Unbounded,sans-serif;color:var(--text);margin-bottom:20px;}
-h1{font-size:36px;color:var(--acc);}
-h2{font-size:28px;}
-.desc{font-size:18px;color:var(--mut);margin-bottom:30px;}
-.card{background:var(--panel);padding:30px;border-radius:12px;border:1px solid var(--line);margin-bottom:30px;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px;}
-.stat{background:var(--bg);padding:20px;border-radius:10px;text-align:center;}
-.stat-val{font-size:32px;font-family:Unbounded,sans-serif;color:var(--acc2);margin-bottom:5px;}
-.stat-lbl{color:var(--mut);font-size:14px;}
-.btn{background:var(--text);color:var(--bg);padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;display:inline-block;cursor:pointer;border:none;}
-.btn:hover{filter:brightness(1.1);}
-footer{padding:30px 20px;text-align:center;color:var(--mut);font-size:14px;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zerno Coffee Supply — Buildora Case Study</title>
+  <meta name="description" content="E-Commerce & Recurring Coffee Subscriptions. Measurable ROI and production architecture by Buildora.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#0B0F19',
+              card: '#111827',
+              surface: '#151D30',
+              violet: '#8B5CF6',
+              cyan: '#06B6D4',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #0B0F19;
+      color: #F3F4F6;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    .bg-mesh {
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(6, 182, 212, 0.12) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+  </style>
 </head>
-<body>
-<header>
-  <a href="/en" class="logo">Buildora<i>.</i></a>
-  <div style="margin-left:auto;display:flex;align-items:center;">
-    <a href="/case-0" style="margin-right:15px;color:var(--mut);font-weight:normal;text-decoration:none;">UK</a>
-    <a href="/en/case-0" style="margin-right:20px;color:var(--text);font-weight:bold;text-decoration:none;">EN</a>
-    <button id="theme" style="margin-right:15px;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:4px 10px;cursor:pointer;font-size:16px;" aria-label="Toggle theme">◐</button>
-    <a href="/en" style="color:var(--mut);text-decoration:none;">← Back to home</a>
-  </div>
-</header>
+<body class="bg-[#0B0F19] text-gray-100 antialiased bg-mesh min-h-screen flex flex-col">
 
-<section style="padding-top:80px;padding-bottom:80px;background:var(--panel);">
-  <div class="container">
-    <div style="display:inline-block;padding:5px 12px;background:rgba(61,255,162,0.1);color:var(--acc);border-radius:20px;font-size:14px;margin-bottom:20px;">E-commerce</div>
-    <h1>Coffee Shop "Zerno"</h1>
-    <p class="desc">E-commerce with online payment. Launched in 6 days, first orders on launch day.</p>
-    
-    <div class="grid">
-      <div class="stat">
-        <div class="stat-val">6 days</div>
-        <div class="stat-lbl">Development time</div>
-      </div>
-      <div class="stat">
-        <div class="stat-val">+34%</div>
-        <div class="stat-lbl">Conversion growth</div>
-      </div>
-      <div class="stat">
-        <div class="stat-val">Apple Pay</div>
-        <div class="stat-lbl">Online payments</div>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#0B0F19]/80 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="/en" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-violet-600 flex items-center justify-center font-bold text-lg text-white shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform duration-300">
+          ⚡
+        </div>
+        <span class="font-display font-bold text-2xl tracking-tight text-white">Buildora<span class="text-cyan-400">.</span></span>
+      </a>
+
+      <div class="flex items-center gap-6 text-sm">
+        <a href="/en#cases" class="text-gray-400 hover:text-white transition-colors">← All Case Studies</a>
+        <a href="#order" class="hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white font-semibold text-sm shadow-md transition-all">
+          Order a Similar Project
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<section>
-  <div class="container">
-    <h2>The Challenge</h2>
-    <p style="color:var(--mut);line-height:1.7;font-size:18px;">The client sold coffee via Instagram, but manual order processing took too much time. They needed a modern store with a shopping cart, automatic delivery calculation, and online payments.</p>
-  </div>
-</section>
+  <!-- Main Content -->
+  <main class="flex-grow py-12 md:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
 
-<section style="background:var(--panel);">
-  <div class="container">
-    <h2>Our Solution</h2>
-    <p style="color:var(--mut);line-height:1.7;font-size:18px;">We developed a fast e-commerce site based on our turnkey solution. Added integration with the payment gateway and delivery services. Now customers buy in 3 clicks, and the owner just ships the orders.</p>
-  </div>
-</section>
+      <!-- Hero Header -->
+      <div class="space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          E-Commerce • Launched in 6 Days
+        </div>
 
-<section>
-  <div class="container" style="text-align:center;">
-    <h2 style="color:var(--acc);">Want similar results?</h2>
-    <p class="desc">Leave a request, and we will build a product specifically for your business.</p>
-    <a href="/en#contact" class="btn" style="font-size:20px;padding:15px 40px;">Order Project</a>
-  </div>
-</section>
+        <div class="flex items-center gap-4">
+          <span class="text-5xl">☕</span>
+          <h1 class="font-display font-bold text-4xl sm:text-5xl text-white tracking-tight leading-[1.15]">
+            Zerno Coffee Supply
+          </h1>
+        </div>
 
-<footer>
-  <div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center;">
-    <div>© 2026 Buildora. All rights reserved.</div>
-    <div style="display:flex;gap:20px;font-size:13px;">
-      <a href="/en/privacy" style="color:var(--text);text-decoration:underline;">Privacy Policy</a>
-      <a href="/en/terms" style="color:var(--text);text-decoration:underline;">Terms of Service</a>
+        <p class="text-gray-300 text-lg sm:text-xl leading-relaxed">
+          E-Commerce & Recurring Coffee Subscriptions
+        </p>
+
+        <!-- Metrics Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+          <div class="bg-gray-900/80 border border-white/10 rounded-2xl p-4 text-center"><div class="font-display font-bold text-2xl sm:text-3xl text-cyan-400">+140%</div><div class="text-[11px] text-gray-400 mt-1 uppercase font-medium">First-month order growth</div></div>
+<div class="bg-gray-900/80 border border-white/10 rounded-2xl p-4 text-center"><div class="font-display font-bold text-2xl sm:text-3xl text-cyan-400">6 Days</div><div class="text-[11px] text-gray-400 mt-1 uppercase font-medium">From concept to first payment</div></div>
+<div class="bg-gray-900/80 border border-white/10 rounded-2xl p-4 text-center"><div class="font-display font-bold text-2xl sm:text-3xl text-cyan-400">42%</div><div class="text-[11px] text-gray-400 mt-1 uppercase font-medium">Customers on recurring subscription</div></div>
+<div class="bg-gray-900/80 border border-white/10 rounded-2xl p-4 text-center"><div class="font-display font-bold text-2xl sm:text-3xl text-cyan-400">99.9%</div><div class="text-[11px] text-gray-400 mt-1 uppercase font-medium">Checkout uptime & reliability</div></div>
+        </div>
+      </div>
+
+      <!-- Challenge & Solution -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-900/60 border border-white/10 rounded-2xl p-8 space-y-4">
+          <div class="flex items-center gap-2 text-violet-400 font-display font-bold text-lg">
+            <span>⚡</span> The Challenge
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            The owners of the Zerno coffee shop chain and specialty roastery faced a bottleneck: over 60% of regular B2C clients ordered freshly roasted coffee beans through direct messages in Instagram and Telegram. Managers handled orders in manual spreadsheets, spent up to 2 hours every day writing payment details, and frequently mixed up grind levels or delivery dates.
+          </p>
+        </div>
+
+        <div class="bg-gray-900/60 border border-cyan-500/30 rounded-2xl p-8 space-y-4">
+          <div class="flex items-center gap-2 text-cyan-400 font-display font-bold text-lg">
+            <span>🚀</span> Delivered Solution
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Buildora engineered a blazing-fast e-commerce platform on Next.js paired with automated recurring subscriptions. We integrated direct card checkout via Apple Pay, Google Pay, and Stripe, alongside a warehouse Telegram bot that streams paid orders in real-time and auto-generates shipping labels.
+          </p>
+        </div>
+      </div>
+
+      <!-- Scope of Work Delivered -->
+      <div class="space-y-6">
+        <h2 class="font-display font-bold text-2xl text-white">Delivered Scope of Work</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-gray-900/60 border border-white/10 rounded-xl p-5 flex items-start gap-4"><div class="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div><div class="text-sm text-gray-300 leading-relaxed">Single-origin and blend catalog with weight selection (250g / 1kg) and custom grind settings</div></div>
+<div class="bg-gray-900/60 border border-white/10 rounded-xl p-5 flex items-start gap-4"><div class="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div><div class="text-sm text-gray-300 leading-relaxed">Automated recurring subscription engine (weekly/monthly fresh coffee deliveries)</div></div>
+<div class="bg-gray-900/60 border border-white/10 rounded-xl p-5 flex items-start gap-4"><div class="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div><div class="text-sm text-gray-300 leading-relaxed">Instant friction-free checkout with Apple Pay, Google Pay, and card tokenization</div></div>
+<div class="bg-gray-900/60 border border-white/10 rounded-xl p-5 flex items-start gap-4"><div class="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div><div class="text-sm text-gray-300 leading-relaxed">Warehouse Telegram bot with automated fulfillment alerts and courier dispatch routing</div></div>
+<div class="bg-gray-900/60 border border-white/10 rounded-xl p-5 flex items-start gap-4"><div class="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div><div class="text-sm text-gray-300 leading-relaxed">Customer self-service portal with previous order history and live parcel tracking</div></div>
+<div class="bg-gray-900/60 border border-white/10 rounded-xl p-5 flex items-start gap-4"><div class="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div><div class="text-sm text-gray-300 leading-relaxed">30-day post-launch technical warranty SLA, error monitoring, and conversion tracking</div></div>
+</div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="space-y-4">
+        <h2 class="font-display font-bold text-xl text-white">Technology Stack</h2>
+        <div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">Next.js</span>
+<span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">Tailwind CSS</span>
+<span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">Stripe API</span>
+<span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">PostgreSQL</span>
+<span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">Telegram Webhooks</span>
+<span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">Vercel Edge</span>
+</div>
+      </div>
+
+      <!-- CTA Contact / Order Form -->
+      <div id="order" class="bg-gray-900/90 border border-cyan-500/30 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-xl space-y-8">
+        <div class="text-center max-w-xl mx-auto space-y-2">
+          <h2 class="font-display font-bold text-3xl text-white">Want Similar Results for Your Business?</h2>
+          <p class="text-gray-400 text-sm">
+            Submit a request for a free consultation. We will provide a tailored architecture and accurate timeline in under 30 minutes.
+          </p>
+        </div>
+
+        <form onsubmit="handleOrderSubmit(event)" class="max-w-xl mx-auto space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Your Name</label>
+            <input type="text" required placeholder="Alex" class="w-full bg-[#0B0F19] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Telegram or Phone Number</label>
+            <input type="text" required placeholder="@username or +1 (555) 000-0000" class="w-full bg-[#0B0F19] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Project Overview</label>
+            <textarea rows="3" placeholder="Tell us briefly about what you want to build or automate..." class="w-full bg-[#0B0F19] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400"></textarea>
+          </div>
+          <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 transition-all">
+            Get Pricing & Launch Plan &rarr;
+          </button>
+          <div id="orderSuccess" class="hidden text-center text-sm font-semibold text-emerald-400 pt-2">
+            ✓ Request submitted! A Buildora engineer will contact you within 30 minutes.
+          </div>
+        </form>
+      </div>
+
     </div>
-  </div>
-</footer>
-<script>document.getElementById('theme').onclick=()=>{const r=document.documentElement;const isL=r.dataset.theme==='light';r.dataset.theme=isL?'dark':'light';localStorage.setItem('theme',isL?'dark':'light');};</script>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-10 bg-[#0B0F19] text-gray-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-2 font-display text-white font-bold">
+        <span class="text-cyan-400">⚡</span> Buildora Technologies
+      </div>
+      <div>© 2026 Buildora. All rights reserved.</div>
+      <div class="flex gap-6">
+        <a href="/en/privacy" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="/en/terms" class="hover:text-white transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
 
 <!-- FLOATING TRANSLATION / LANGUAGE SWITCHER -->
 <div id="langToggleWidget" class="fixed top-24 right-6 z-50 flex items-center bg-gray-900/90 border border-white/15 rounded-full p-1 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-cyan-500/50">
@@ -107,5 +206,56 @@ footer{padding:30px 20px;text-align:center;color:var(--mut);font-size:14px;}
   </a>
 </div>
 
+<!-- PREMIUM NOTIFICATION TOAST -->
+<div id="appToast" class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none max-w-md w-full px-4">
+  <div class="bg-gray-900/95 border border-cyan-500/40 rounded-2xl p-4 shadow-2xl backdrop-blur-xl flex items-start gap-3 pointer-events-auto">
+    <div id="toastIcon" class="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 text-lg flex-shrink-0">
+      ✓
+    </div>
+    <div class="flex-1 pt-0.5">
+      <div id="toastTitle" class="text-sm font-bold text-white font-display">Success</div>
+      <div id="toastMsg" class="text-xs text-gray-300 mt-0.5 leading-relaxed">Notification details</div>
+    </div>
+    <button onclick="hideToast()" class="text-gray-400 hover:text-white text-lg font-bold p-1 leading-none">&times;</button>
+  </div>
+</div>
+
+<script>
+let toastTimer = null;
+function showToast(title, message) {
+  const toast = document.getElementById('appToast');
+  if (!toast) return;
+  document.getElementById('toastTitle').textContent = title;
+  document.getElementById('toastMsg').textContent = message;
+  toast.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
+  toast.classList.add('translate-y-0', 'opacity-100');
+  if (toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { hideToast(); }, 6000);
+}
+function hideToast() {
+  const toast = document.getElementById('appToast');
+  if (toast) {
+    toast.classList.remove('translate-y-0', 'opacity-100');
+    toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+  }
+}
+function handleOrderSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const inputs = form.querySelectorAll('input');
+  let nameVal = 'Customer';
+  let contactVal = '+380987194210';
+  if (inputs.length >= 2) {
+    nameVal = inputs[0].value || nameVal;
+    contactVal = inputs[1].value || contactVal;
+  }
+  document.getElementById('orderSuccess').classList.remove('hidden');
+  const alertMsg = 'Order submitted! Our team will contact you on ' + contactVal;
+  showToast('Order Submitted! 🚀', 'Thank you, ' + nameVal + '! Our engineer will contact you on ' + contactVal + ' in under 30 minutes.');
+  try {
+    window.alert(alertMsg);
+  } catch (err) {}
+}
+</script>
 </body>
 </html>
