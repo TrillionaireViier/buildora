@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zerno Coffee Supply — Кейс портфоліо Buildora</title>
+  <meta name="description" content="E-Commerce & Регулярна підписка на каву. Реальні результати та технологічний стек від Buildora.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#0B0F19',
+              card: '#111827',
+              surface: '#151D30',
+              violet: '#8B5CF6',
+              cyan: '#06B6D4',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #0B0F19;
+      color: #F3F4F6;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    .bg-mesh {
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(6, 182, 212, 0.12) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+<body class="bg-[#0B0F19] text-gray-100 antialiased bg-mesh min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#0B0F19]/80 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-violet-600 flex items-center justify-center font-bold text-lg text-white shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform duration-300">
+          ⚡
+        </div>
+        <span class="font-display font-bold text-2xl tracking-tight text-white">Buildora<span class="text-cyan-400">.</span></span>
+      </a>
+
+      <div class="flex items-center gap-6 text-sm">
+        <a href="/#cases" class="text-gray-400 hover:text-white transition-colors">← Всі кейси</a>
+        <a href="#order" class="hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white font-semibold text-sm shadow-md transition-all">
+          Замовити схожий проект
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow py-12 md:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+      <!-- Hero Header -->
+      <div class="space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          E-Commerce • Запуск за 6 Днів
+        </div>
+
+        <div class="flex items-center gap-4">
+          <span class="text-5xl">☕</span>
+          <h1 class="font-display font-bold text-4xl sm:text-5xl text-white tracking-tight leading-[1.15]">
+            Zerno Coffee Supply
+          </h1>
+        </div>
+
+        <p class="text-gray-300 text-lg sm:text-xl leading-relaxed">
+          E-Commerce & Регулярна підписка на каву
+        </p>
+
+        <!-- Metrics Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+          <div class="bg-gray-900/80 border border-white/10 rounded-2xl p-4 text-center"><div class="font-display font-bold text-2xl sm:text-3xl text-cyan-400"> +140%</div><div class="text-[11px] text-gray-400 mt-1 uppercase font-medium">Ріст замовлень у перший місяць</div></div>
+<div class="bg-gray-900/80 border border-white/10 rounded-2xl p-4 text-center"><div class="font-display font-bold text-2xl sm:text-3xl text-cyan-400">6 Днів</div><div class="text-[11px] text-gray-400 mt-1 uppercase font-medium">Від ідеї до першої оплати</div></div>
+<div class="bg-gray-900/80 border border-white/10 rounded-2xl p-4 text-center"><div class="font-display font-bold text-2xl sm:text-3xl text-cyan-400">42%</div><div class="text-[11px] text-gray-400 mt-1 uppercase font-medium">Клієнтів оформили підписку</div></div>
+<div class="bg-gray-900/80 border border-white/10 rounded-2xl p-4 text-center"><div class="font-display font-bold text-2xl sm:text-3xl text-cyan-400">99.9%</div><div class="text-[11px] text-gray-400 mt-1 uppercase font-medium">Безвідмовність онлайн-каси</div></div>
+        </div>
+      </div>
+
+      <!-- Challenge & Solution -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-900/60 border border-white/10 rounded-2xl p-8 space-y-4">
+          <div class="flex items-center gap-2 text-violet-400 font-display font-bold text-lg">
+            <span>⚡</span> Проблема та виклик
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Власники мережі кавʼярень та обсмажувального виробництва Zerno зіткнулися з тим, що понад 60% регулярних B2C клієнтів замовляли свіжообсмажену каву через хаотичні приватні повідомлення в Instagram і Telegram. Менеджери вручну вели таблиці, витрачали до 2 годин на день на виписку реквізитів і часто плутали помол або дату доставки.
+          </p>
+        </div>
+
+        <div class="bg-gray-900/60 border border-cyan-500/30 rounded-2xl p-8 space-y-4">
+          <div class="flex items-center gap-2 text-cyan-400 font-display font-bold text-lg">
+            <span>🚀</span> Реалізоване рішення
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Buildora розробила сучасний високошвидкісний інтернет-магазин на Next.js із підключеною автоматизацією регулярних підписок. Ми інтегрували прямий прийом карток Apple Pay / Google Pay / Monobank, а також Telegram-бота, який у реальному часі передає замовлення на склад обсмажки та автоматично друкує стікери на пачки.
+          </p>
+        </div>
+      </div>
+
+      <!-- Scope of Work Delivered -->
+      <div class="space-y-6">
+        <h2 class="font-display font-bold text-2xl text-white">Реалізований обсяг робіт (Scope)</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-gray-900/60 border border-white/10 rounded-xl p-5 flex items-start gap-4"><div class="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div><div class="text-sm text-gray-300 leading-relaxed">Розробка каталогу моносортів і блендів з вибором ваги (250г / 1кг) та ступеня помелу</div></div>
+<div class="bg-gray-900/60 border border-white/10 rounded-xl p-5 flex items-start gap-4"><div class="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div><div class="text-sm text-gray-300 leading-relaxed">Модуль повторюваної підписки (автоматична щомісячна доставка свіжої кави)</div></div>
+<div class="bg-gray-900/60 border border-white/10 rounded-xl p-5 flex items-start gap-4"><div class="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div><div class="text-sm text-gray-300 leading-relaxed">Миттєвий чекаут з Apple Pay, Google Pay та збереженням картки</div></div>
+<div class="bg-gray-900/60 border border-white/10 rounded-xl p-5 flex items-start gap-4"><div class="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div><div class="text-sm text-gray-300 leading-relaxed">Telegram-бот для складу з автосповіщеннями та друком накладних Нової Пошти</div></div>
+<div class="bg-gray-900/60 border border-white/10 rounded-xl p-5 flex items-start gap-4"><div class="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div><div class="text-sm text-gray-300 leading-relaxed">Особистий кабінет клієнта з історією замовлень і трекінгом посилок</div></div>
+<div class="bg-gray-900/60 border border-white/10 rounded-xl p-5 flex items-start gap-4"><div class="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div><div class="text-sm text-gray-300 leading-relaxed">30-денна технічна підтримка, SLA моніторинг та аналітика когорт</div></div>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="space-y-4">
+        <h2 class="font-display font-bold text-xl text-white">Технологічний стек проекту</h2>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">Next.js</span>
+<span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">Tailwind CSS</span>
+<span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">Monobank API</span>
+<span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">Nova Poshta API</span>
+<span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">Telegram Webhooks</span>
+<span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-gray-300">Vercel Edge</span>
+        </div>
+      </div>
+
+      <!-- CTA Contact / Order Form -->
+      <div id="order" class="bg-gray-900/90 border border-cyan-500/30 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-xl space-y-8">
+        <div class="text-center max-w-xl mx-auto space-y-2">
+          <h2 class="font-display font-bold text-3xl text-white">Бажаєте такий же результат для свого бізнесу?</h2>
+          <p class="text-gray-400 text-sm">
+            Залиште заявку на безкоштовну консультацію. Ми запропонуємо готову архітектуру та точний прорахунок за 30 хвилин.
+          </p>
+        </div>
+
+        <form onsubmit="handleOrderSubmit(event)" class="max-w-xl mx-auto space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Ваше імʼя</label>
+            <input type="text" required placeholder="Олександр" class="w-full bg-[#0B0F19] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Telegram або номер телефону</label>
+            <input type="text" required placeholder="@username або +380 (99) 000-00-00" class="w-full bg-[#0B0F19] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Коротко про ваш проект</label>
+            <textarea rows="3" placeholder="Розкажіть про вашу компанію та яку задачу потрібно автоматизувати..." class="w-full bg-[#0B0F19] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400"></textarea>
+          </div>
+          <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 transition-all">
+            Отримати розрахунок та план запуску &rarr;
+          </button>
+          <div id="orderSuccess" class="hidden text-center text-sm font-semibold text-emerald-400 pt-2">
+            ✓ Заявку успішно прийнято! Інженер Buildora звʼяжеться з вами протягом 30 хвилин.
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-10 bg-[#0B0F19] text-gray-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-2 font-display text-white font-bold">
+        <span class="text-cyan-400">⚡</span> Buildora Technologies
+      </div>
+      <div>© 2026 Buildora. Всі права захищені.</div>
+      <div class="flex gap-6">
+        <a href="/privacy" class="hover:text-white transition-colors">Політика конфіденційності</a>
+        <a href="/terms" class="hover:text-white transition-colors">Умови обслуговування</a>
+      </div>
+    </div>
+  </footer>
+
+<!-- FLOATING TRANSLATION / LANGUAGE SWITCHER -->
+<div id="langToggleWidget" class="fixed top-24 right-6 z-50 flex items-center bg-gray-900/90 border border-white/15 rounded-full p-1 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-cyan-500/50">
+  <a id="btnLangUA" href="/case-0" class="px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-gradient-to-r from-violet-600 to-cyan-500 text-white shadow-md">
+    🇺🇦 UA
+  </a>
+  <a id="btnLangEN" href="/en/case-0" class="px-3 py-1.5 rounded-full text-xs font-bold transition-all text-gray-400 hover:text-white hover:bg-white/5">
+    🇬🇧 EN
+  </a>
+</div>
+
+<!-- PREMIUM NOTIFICATION TOAST -->
+<div id="appToast" class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none max-w-md w-full px-4">
+  <div class="bg-gray-900/95 border border-cyan-500/40 rounded-2xl p-4 shadow-2xl backdrop-blur-xl flex items-start gap-3 pointer-events-auto">
+    <div id="toastIcon" class="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 text-lg flex-shrink-0">
+      ✓
+    </div>
+    <div class="flex-1 pt-0.5">
+      <div id="toastTitle" class="text-sm font-bold text-white font-display">Success</div>
+      <div id="toastMsg" class="text-xs text-gray-300 mt-0.5 leading-relaxed">Notification details</div>
+    </div>
+    <button onclick="hideToast()" class="text-gray-400 hover:text-white text-lg font-bold p-1 leading-none">&times;</button>
+  </div>
+</div>
+
+<script>
+let toastTimer = null;
+function showToast(title, message) {
+  const toast = document.getElementById('appToast');
+  if (!toast) return;
+  document.getElementById('toastTitle').textContent = title;
+  document.getElementById('toastMsg').textContent = message;
+  toast.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
+  toast.classList.add('translate-y-0', 'opacity-100');
+  if (toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { hideToast(); }, 6000);
+}
+function hideToast() {
+  const toast = document.getElementById('appToast');
+  if (toast) {
+    toast.classList.remove('translate-y-0', 'opacity-100');
+    toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+  }
+}
+function handleOrderSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const inputs = form.querySelectorAll('input');
+  let nameVal = 'Customer';
+  let contactVal = '+380987194210';
+  if (inputs.length >= 2) {
+    nameVal = inputs[0].value || nameVal;
+    contactVal = inputs[1].value || contactVal;
+  }
+  document.getElementById('orderSuccess').classList.remove('hidden');
+  const alertMsg = 'Order submitted! Our team will contact you on ' + contactVal;
+  showToast('Заявку надіслано! 🚀', 'Дякуємо, ' + nameVal + '! Наш інженер звʼяжеться з вами за номером ' + contactVal + ' протягом 30 хвилин.');
+  try {
+    window.alert(alertMsg);
+  } catch (err) {}
+}
+</script>
+</body>
+</html>
