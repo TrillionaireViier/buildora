@@ -96,5 +96,16 @@ footer{padding:30px 20px;text-align:center;color:var(--mut);font-size:14px;}
   </div>
 </footer>
 <script>document.getElementById('theme').onclick=()=>{const r=document.documentElement;const isL=r.dataset.theme==='light';r.dataset.theme=isL?'dark':'light';localStorage.setItem('theme',isL?'dark':'light');};</script>
+
+<!-- FLOATING TRANSLATION / LANGUAGE SWITCHER -->
+<div id="langToggleWidget" class="fixed top-24 right-6 z-50 flex items-center bg-gray-900/90 border border-white/15 rounded-full p-1 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-cyan-500/50">
+  <a id="btnLangUA" href="/case-1" class="px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-gradient-to-r from-violet-600 to-cyan-500 text-white shadow-md">
+    🇺🇦 UA
+  </a>
+  <a id="btnLangEN" href="/en/case-1" class="px-3 py-1.5 rounded-full text-xs font-bold transition-all text-gray-400 hover:text-white hover:bg-white/5">
+    🇬🇧 EN
+  </a>
+</div>
+
 </body>
 </html>

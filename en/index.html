@@ -106,6 +106,14 @@
 
     <!-- Mobile Drawer Navigation -->
     <div id="mobileMenu" class="hidden md:hidden border-b border-white/10 bg-[#0B0F19]/95 backdrop-blur-2xl px-4 pt-2 pb-6 space-y-3">
+      <!-- Language Switcher in Mobile Menu -->
+      <div class="flex items-center justify-between pb-2 border-b border-white/10 mb-2">
+        <span class="text-xs font-semibold text-gray-400 uppercase">Language / Мова</span>
+        <div class="flex items-center rounded-lg bg-white/5 border border-white/10 p-1 text-xs">
+          <a href="/" class="px-3 py-1 rounded text-gray-400 hover:text-white transition-colors">🇺🇦 UA</a>
+          <span class="px-3 py-1 rounded bg-gradient-to-r from-violet-600 to-cyan-500 text-white font-bold">🇬🇧 EN</span>
+        </div>
+      </div>
       <a href="#services-all" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5" onclick="closeMobileMenu()">All Services</a>
       <a href="#bots" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5" onclick="closeMobileMenu()">Telegram Bots</a>
       <a href="#calculator" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5" onclick="closeMobileMenu()">Price Calculator</a>
@@ -1390,6 +1398,17 @@ function hideToast() {
   }
 }
 </script>
+
+
+<!-- FLOATING TRANSLATION / LANGUAGE SWITCHER -->
+<div id="langToggleWidget" class="fixed top-24 right-6 z-50 flex items-center bg-gray-900/90 border border-white/15 rounded-full p-1 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-cyan-500/50">
+  <a id="btnLangUA" href="/" class="px-3 py-1.5 rounded-full text-xs font-bold transition-all text-gray-400 hover:text-white hover:bg-white/5">
+    🇺🇦 UA
+  </a>
+  <a id="btnLangEN" href="/en" class="px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-gradient-to-r from-violet-600 to-cyan-500 text-white shadow-md">
+    🇬🇧 EN
+  </a>
+</div>
 
 </body>
 </html>
