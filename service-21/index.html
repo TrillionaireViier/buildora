@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotel Room Booking Bot — Buildora Turnkey Solutions</title>
+  <title>Бронювання номерів готелю — Buildora</title>
   <meta name="description" content="Direct guest room reservations, payment, and digital concierge service. Professional delivery by Buildora.">
   
   <!-- Tailwind CSS CDN -->
@@ -61,9 +61,9 @@
       </a>
 
       <div class="flex items-center gap-6 text-sm">
-        <a href="/#services-all" class="text-gray-400 hover:text-white transition-colors">← All Services</a>
+        <a href="/#services-all" class="text-gray-400 hover:text-white transition-colors">← Всі послуги</a>
         <a href="#order" class="hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white font-semibold text-sm shadow-md transition-all">
-          Order This Solution
+          Замовити рішення
         </a>
       </div>
     </div>
@@ -80,9 +80,7 @@
           Telegram Bot • Delivery: 7 Days
         </div>
 
-        <h1 class="font-display font-bold text-4xl sm:text-5xl text-white tracking-tight leading-[1.15]">
-          Hotel Room Booking Bot
-        </h1>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl text-white tracking-tight leading-[1.15]">Бронювання номерів готелю</h1>
 
         <p class="text-gray-300 text-lg sm:text-xl leading-relaxed">
           Direct guest room reservations, payment, and digital concierge service
@@ -91,16 +89,16 @@
         <!-- Pricing Card -->
         <div class="bg-gray-900/80 border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-xl flex flex-col sm:flex-row justify-between sm:items-center gap-6 shadow-2xl">
           <div>
-            <div class="text-xs uppercase font-semibold text-gray-400">Fixed / Turnkey Investment:</div>
+            <div class="text-xs uppercase font-semibold text-gray-400">Фіксована вартість під ключ:</div>
             <div class="font-display font-bold text-4xl text-cyan-400 mt-1">11,000 ₴</div>
-            <div class="text-xs text-gray-400 mt-1">✓ 50% Upfront, 50% Upon Complete Acceptance</div>
+            <div class="text-xs text-gray-400 mt-1">✓ 50% аванс, 50% після фінального запуску та перевірки</div>
           </div>
           <div class="flex flex-col sm:flex-row gap-3">
             <a href="#order" class="px-8 py-4 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 transition-all text-center">
-              Order This Service &rarr;
+              Замовити послугу &rarr;
             </a>
             <a href="https://t.me/buildora_support" target="_blank" class="px-6 py-4 rounded-xl border border-white/10 hover:border-cyan-500/40 bg-white/5 text-gray-200 font-semibold text-sm transition-all text-center">
-              Ask in Telegram
+              Задати питання в Telegram
             </a>
           </div>
         </div>
@@ -187,12 +185,12 @@
           <div class="bg-gray-900/40 border border-white/10 rounded-xl p-5 space-y-2">
             <span class="text-xs font-mono text-cyan-400 font-bold">STAGE 03</span>
             <div class="font-bold text-white text-base">Engineering</div>
-            <p class="text-xs text-gray-400">Clean code implementation, API connections, and QA testing.</p>
+            <p class="text-xs text-gray-400">Написання коду, підключення API, бази даних та повне тестування.</p>
           </div>
           <div class="bg-gray-900/40 border border-white/10 rounded-xl p-5 space-y-2">
             <span class="text-xs font-mono text-cyan-400 font-bold">STAGE 04</span>
-            <div class="font-bold text-white text-base">Launch & Handover</div>
-            <p class="text-xs text-gray-400">Production deployment, staff instructions, and 30d warranty SLA.</p>
+            <div class="font-bold text-white text-base">Запуск та передача</div>
+            <p class="text-xs text-gray-400">Розгортання на сервері, інструкції для персоналу та 30 днів гарантії.</p>
           </div>
         </div>
       </div>
@@ -200,28 +198,26 @@
       <!-- Direct Order Form -->
       <div id="order" class="bg-gray-900/90 border border-cyan-500/30 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-xl space-y-8">
         <div class="text-center max-w-xl mx-auto space-y-2">
-          <h2 class="font-display font-bold text-3xl text-white">Order Hotel Room Booking Bot</h2>
+          <h2 class="font-display font-bold text-3xl text-white">Замовити Бронювання номерів готелю</h2>
           <p class="text-gray-400 text-sm">
-            Leave your contact details. A Buildora technical specialist will review your request and contact you within 30 minutes.
+            Залиште ваші контактні дані. Технічний спеціаліст Buildora звʼяжеться з вами протягом 30 хвилин для узгодження деталей.
           </p>
         </div>
 
         <form onsubmit="handleOrderSubmit(event)" class="max-w-xl mx-auto space-y-4">
           <div>
-            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Your Name</label>
+            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Ваше імʼя</label>
             <input type="text" required placeholder="Alexander" class="w-full bg-[#0B0F19] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Telegram Username or Phone</label>
+            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Telegram або номер телефону</label>
             <input type="text" required placeholder="@username or +1 (555) 000-0000" class="w-full bg-[#0B0F19] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Project Notes / Requirements</label>
-            <textarea rows="3" placeholder="Tell us about your business or specific features you need..." class="w-full bg-[#0B0F19] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400"></textarea>
+            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Побажання / Коментар до проекту</label>
+            <textarea rows="3" placeholder="Опишіть коротко ваш бізнес або особливості, які необхідно реалізувати..." class="w-full bg-[#0B0F19] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400"></textarea>
           </div>
-          <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 transition-all">
-            Submit Order for Hotel Room Booking Bot (11,000 ₴) &rarr;
-          </button>
+          <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 transition-all">Надіслати заявку на Бронювання номерів готелю &rarr;</button>
           <div id="orderSuccess" class="hidden text-center text-sm font-semibold text-emerald-400 pt-2">
             ✓ Request submitted! A Buildora engineer will reach out in under 30 minutes.
           </div>
@@ -237,10 +233,10 @@
       <div class="flex items-center gap-2 font-display text-white font-bold">
         <span class="text-cyan-400">⚡</span> Buildora Technologies
       </div>
-      <div>© 2026 Buildora. All rights reserved.</div>
+      <div>© 2026 Buildora. Всі права захищені.</div>
       <div class="flex gap-6">
-        <a href="/privacy" class="hover:text-white transition-colors">Privacy Policy</a>
-        <a href="/terms" class="hover:text-white transition-colors">Terms of Service</a>
+        <a href="/privacy" class="hover:text-white transition-colors">Політика конфіденційності</a>
+        <a href="/terms" class="hover:text-white transition-colors">Умови обслуговування</a>
       </div>
     </div>
   </footer>
